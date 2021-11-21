@@ -1,34 +1,90 @@
 // No cambies los nombres de las funciones.
 
 function obtenerMayor(x, y) {
+
+  x = 4;
+  y = 3;
+
+  if ( x > y ){
+    console.log(' X = ', x, ' es Mayor a ',' Y = ' , y);
+
+  }else if( x===y) {
+    console.log(' X = ', x, ' es igual a  ', ' Y = ' , y);
+  }else{
+    console.log(' X = ', x, ' es Menor ', ' Y = ' , y);
+  }
   // "x" e "y" son números enteros (int).
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
+
 }
+
+obtenerMayor();
+
 
 function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
+
+  if (edad >= 18) {
+    console.log(' Persona con edad ', edad, ' es Allowed ');
+  } else {
+    console.log(' Persona con edad ', edad, ' es Not allowed ');
+  }
+
 }
-  
+
+mayoriaDeEdad(18)
+
 function conection(status) {
   //Recibimos un estado de conexión de un usuario representado por un valor numérico. 
   //Cuando el estado es igual a 1, el usuario está "Online"
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
+  onLine = 1;
+  away = 2;
+ 
+  if (status === onLine) {
+    console.log('el usuario está Online', onLine);
+  }
+  else if (status === away) {
+    console.log('el usuario está Away', away);
+  } else {
+    console.log('el usuario está Offline');
+  }
 }
 
+conection(0);
+
+
+
 function saludo(idioma) {
+
   // Devuelve un saludo en tres diferentes lenguajes:
   // Si "idioma" es "aleman", devuelve "Guten Tag!"
   // Si "idioma" es "mandarin", devuelve "Ni Hao!"
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
+  if (idioma === 'ingles') {
+    console.log('Hello!');
+  }
+  else if (idioma === ' mandarin ') {
+    console.log('Ni Hao!');
+  }
+  else if (idioma === 'aleman') {
+    console.log('Guten Tag!');
+  } else {
+    console.log('Hola!');
+  }
+
 }
+saludo('aleman')
+
+
 
 function colors(color) {
   //La función recibe un color. Devolver el string correspondiente:
@@ -38,19 +94,60 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
+
+  switch (color) {
+    case 'blue':
+      console.log('This is blue');
+      break;
+    case 'red':
+      console.log('This is red');
+      break;
+
+    case 'green':
+      console.log('This is green');
+      break;
+
+    case 'orange':
+      console.log('This is orange');
+      break;
+    default:
+      console.log("Color not found");
+      break;
+  }
 }
 
+
+colors('green')
+
 function esDiezOCinco(numero) {
+verdad = true;
+  if ( numero === 5 || numero ===10) {
+    console.log( ' es ', numero , verdad  )
+  } else {
+    console.log( ' es ', numero , !verdad  )
+  }
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
+ 
 }
+
+esDiezOCinco(0);
+
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
+
+  if (numero < 50 && numero >20){
+    return true;
+
+  } else {
+    return false
+  }
 }
+estaEnRango(5);
 
 function esEntero(numero) {
   // Devuelve "true" si "numero" es un entero (int/integer)
@@ -60,7 +157,15 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
+
+  if (Math.floor(numero === 1 || numero === -10)) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+esEntero(0.5)
 
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
