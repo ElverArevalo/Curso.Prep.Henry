@@ -168,20 +168,60 @@ function esEntero(numero) {
 esEntero(0.5)
 
 function fizzBuzz(numero) {
+
+  if (numero% 3 === 0 && numero% 5 === 0) {
+    console.log('fizzbuzz');
+  } else if(numero% 3 === 0  ){
+    console.log('fizz');
+   }else if(numero% 5 === 0  ){
+    console.log('buzz');
+   } else {
+    console.log(numero);
+  }
+
+
   // Si "numero" es divisible entre 3, devuelve "fizz"
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
 }
 
+fizzBuzz(2);
+
+
+
 function operadoresLogicos(num1, num2, num3) {
   //La función recibe tres números distintos. 
-  //Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
-  //Si alguno de los tres números es negativo, retornar ---> "Hay negativos"
-  //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
-  //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
+ //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
+  
+if(num1 === 0 || num2 === 0 || num3=== 0){
+  console.error( 'error' );
+}
+//Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
+else if( num1 > num2 && num1 > num3 && num1 > 0 && num2 > 0 && num3 > 0) {
+   console.log('Numero', num1 , ' es mayor y postivo');
+} 
+ //Si alguno de los tres números es negativo, retornar ---> "Hay negativos"
+else if (num1 < 0 ||  num2 < 0 || num3 <  0 ) {
+  console.log('Hay  negativos  ' )
+} 
+
+//Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
+else if (num3 > num2 && num3 > num1  ) {
+  num3 = num3 + 1;
+  console.log( num3 );
+} 
+
+else {
+  return false
+}
+
+ 
+ 
+ 
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
 }
+operadoresLogicos(1 , 2 , 3);
 
 function esPrimo(numero) {
   // Devuelve "true" si "numero" es primo
