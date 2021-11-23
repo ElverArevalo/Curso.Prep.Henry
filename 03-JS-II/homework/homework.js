@@ -1,5 +1,7 @@
 // No cambies los nombres de las funciones.
 
+const { multiplica } = require("../../02-JS-I/homework/homework");
+
 function obtenerMayor(x, y) {
 
   x = 4;
@@ -214,48 +216,99 @@ else if (num3 > num2 && num3 > num1  ) {
 
 else {
   return false
-}
-
- 
- 
- 
+} 
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
 }
+
 operadoresLogicos(1 , 2 , 3);
 
+
+
 function esPrimo(numero) {
+
   // Devuelve "true" si "numero" es primo
   // De lo contrario devuelve "falso"
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
+
+  for (var numero = 2; numero <= 13; numero++) {
+    var primo = 1;
+    var contador = 2;
+    while(contador <= numero/2 && primo) {
+      if (numero% contador === 0) {
+        primo = 0;
+        console.log(numero, false)
+      }
+      contador++;
+    }
+    if( primo ) {
+      console.log( numero, true)
+    }
+  }
+ 
 }
+
+esPrimo();
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
 
-}
+  if (valor ) {
+    console.log('Soy verdadero');
+  }else {
+    console.log('Soy falso');
+  }
 
-function tablaDelSeis(){
+}
+esVerdadero(true);
+
+function tablaDelSeis() {
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
-  //Escribe tu código aquí   
-  
+  //Escribe tu código aquí  
+  var nunSeis = 6;
+
+  for (var numMulti = 0; numMulti <= 60; numMulti++) {
+    var result = nunSeis * numMulti
+    console.log(nunSeis + ' X ' + numMulti + ' = ' + result);
+  }
+
 }
 
-function tieneTresDigitos(numero){
+tablaDelSeis();
+
+function tieneTresDigitos(numero) {
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+
+  if (numero.toString().length === 3) {
+    return true
+  } else {
+    return false
+  }
 }
+tieneTresDigitos(235);
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+
+var limite = 0;
+var valor = 5;
+
+do {
+  limite++;
+  numero = valor * numero;
+} while (limite < 8);
+
+console.log(numero);
+
 }
+doWhile(2);
 
 
 // No modificar nada debajo de esta línea
